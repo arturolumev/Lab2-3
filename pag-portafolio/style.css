@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f9eaea;
+    font-family: 'Poppins', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.contenedor {
+    width: 80%;
+    max-width: 800px;
+    margin: auto;
+}
+
+/*  HEADER  */
+
+header {
+    padding: 40px 0;
+}
+
+header .logo {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header .logo p{
+    color: #9b9b9b;
+}
+
+header form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+header .barra-busqueda {
+    width: 70%;
+    height: 40px;
+    line-height: 40px;
+    background: #ffff;
+    padding: 0 20px;
+    border-radius: 100px;
+    border: none;
+    text-align: center;
+    font-size: 16px;
+}
+
+header .categorias {
+    display: flex;
+    justify-content: center;
+
+    /*Las categorias se acomodan automaticamente*/
+    flex-wrap: wrap;
+}
+
+header .categorias a {
+    color: #9b9b9b;
+    margin: 10px 20px;
+    font-size: 18px;
+    font-weight: 700px;
+}
+
+header .categorias a.activo {
+    color: #000;
+}
+
+/*  GRID  */
+.grid {
+    position: relative;
+    width: 100%;
+    opacity: 0;                             /*Se asigna la opacidad 0*/
+    transition: opacity 0.5s linear 1s;     /*Se le asigna la transicion*/
+}
+
+/*Se crea una nueva clase, se usara JS para ejecutar esta clase*/
+.grid.imagenes-cargadas {
+    opacity: 1;
+}
+
+.grid .item {
+    position: absolute;
+    display: block;
+    padding: 0;
+    margin: 10px;
+    width: calc(33.33% - 20px);
+}
+
+.grid .item-contenido{
+    position: relative;
+}
+
+.grid .item img{
+    width: 100%;
+    cursor: pointer;
+    vertical-align: top;
+    border-radius: 5%;
+}
+
+/*  OVERLAY  */
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, .9);
+    width: 100%;
+    height: 100vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/*
+    Se crea la clase 'overlay.activo', a la cual podremos
+    acceder mediante codigo JS.
+*/
+.overlay.activo {
+    display: flex;
+}
+
+.overlay img {
+    max-width: 100%;
+}
+
+.overlay .descripcion {
+    display: block;
+    background: #fff;
+    padding: 20px;
+    text-align: center;
+    margin-top: 5px;
+    border-radius: 10px;
+    max-width: 50%;
+}
+
+.contenedor-img {
+    position: relative;
+}
+
+.overlay #btn-cerrar-popup {
+    background: none;
+    font-size: 20px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    right: -20px;
+    top: -20px;
+}
+
+/*  FOOTER  */
+
+footer .redes-sociales {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    padding: 20px;
+
+    /*Los iconos se acomodan automaticamente*/
+    flex-wrap: wrap;
+}
+
+footer .redes-sociales a {
+    display: block;
+    width: 60px;
+    height: 60px;
+    background: #000;
+    color: #fff;
+    margin: 20px;
+    text-align: center;
+    border-radius: 100px;
+    transition: .3s ease all;
+}
+
+footer .redes-sociales .twitter {background: #1da1f2;}
+footer .redes-sociales .facebook {background: #3b5998;}
+footer .redes-sociales .instagram {background: #c13584;}
+
+footer .redes-sociales a i {
+    font-size: 20px;
+    line-height: 60px;
+}
+
+/* Duracion de la animacion de los iconos*/
+footer .contenedor-icono:hover a{
+    animation: icono .5s ease;
+}
+
+/* Rotacion de los iconos */
+@keyframes icono {
+    from {
+        transform: rotate3d(0,0,0,0);
+    } 
+    to {
+        transform: rotate3d(1,0,2, 360deg);
+    }
+}
+
+footer .creado-por {
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 14px;
+    color: #c13584;
+}
+
+footer .creado-por a{color: #000;}
+footer .creado-por a:hover{text-decoration: underline;}
+
+/*  MEDIAQUERIES  */
+
+@media screen and (max-width: 700px) {
+    .grid .item {
+        width: calc(50% - 20px);
+    }
+    header .barra-busqueda {
+        width: 100%;
+    }
+}

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/1568b14259.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Portafolio Dinamico</title>
+</head>
+
+<body>
+
+    <div class="contenedor">
+        <header>
+            <div class="logo">
+                <h1>Portafolio </h1>
+                <p>Desarrollador Web</p>
+            </div>
+            <form action="">
+                <input type="text" class="barra-busqueda" id="barra-busqueda" placeholder="Buscar">
+            </form>
+            <div class="categorias" id="categorias">
+                <!--Principal-->
+                <a href="#" class="activo">Todos</a>
+                <!--Secciones-->
+                <a href="#">Restaurantes</a>
+                <a href="#">Hoteles</a>
+                <a href="#">Peliculas</a>
+                <a href="#">Videojuegos</a>
+            </div>
+        </header>
+        <!--Grid de imagenes-->
+        <section class="grid" id="grid">
+            <!--
+            Clase item para las imagenes
+            Se seguira la estructura para poder usar la libreria en donde se agregan
+            los contenidos (imagenes) dentro de un div.
+            -->
+            <div class="item" 
+                data-categoria="peliculas" 
+                data-etiquetas="pelicula batman" 
+                data-descripcion="The Batman">
+
+                <div class="item-contenido">
+                    <img src="img/pelicula-thebatman.png" alt="">
+                </div>
+            </div>
+            <div class="item" 
+                data-categoria="hoteles" 
+                data-etiquetas="hoteles" 
+                data-descripcion="Hotel Casa Andina">
+
+                <div class="item-contenido">
+                    <img src="img/hotel-casaandina.png" alt="">
+                </div>
+            </div>
+            <div class="item" 
+                data-categoria="videojuegos" 
+                data-etiquetas="videojuego juego naughty dog studios"
+                data-descripcion="Naughty Dog">
+
+                <div class="item-contenido">
+                    <img src="img/videojuego-naughtydog.png" alt="">
+                </div>
+            </div>
+            <div class="item" 
+                data-categoria="hoteles" 
+                data-etiquetas="hoteles" 
+                data-descripcion="Hotel Radisson">
+
+                <div class="item-contenido">
+                    <img src="img/hotel-radisson.png" alt="">
+                </div>
+            </div>
+            <div class="item" 
+                data-categoria="restaurantes" 
+                data-etiquetas="restaurante maido comida"
+                data-descripcion="Restaurante Maido">
+
+                <div class="item-contenido">
+                    <img src="img/restaurante-maido.png" alt="">
+                </div>
+            </div>
+            <div class="item" 
+                data-categoria="peliculas" 
+                data-etiquetas="pelicula marvel studios"
+                data-descripcion="Marvel Studios">
+
+                <div class="item-contenido">
+                    <img src="img/pelicula-marvel.png" alt="">
+                </div>
+            </div>
+            <div class="item" 
+                data-categoria="peliculas" 
+                data-etiquetas="pelicula videojuego juego uncharted"
+                data-descripcion="Uncharted">
+
+                <div class="item-contenido">
+                    <img src="img/pelicula-uncharted.png" alt="">
+                </div>
+            </div>
+            <div class="item" 
+                data-categoria="videojuegos" 
+                data-etiquetas="videojuego juego konami"
+                data-descripcion="Konami">
+
+                <div class="item-contenido">
+                    <img src="img/videojuego-konami.png" alt="">
+                </div>
+            </div>
+            <div class="item" 
+                data-categoria="restaurantes" 
+                data-etiquetas="restaurante bubba gump comida"
+                data-descripcion="Restaurante Bubba Gump">
+
+                <div class="item-contenido">
+                    <img src="img/restaurante-bubbagump.png" alt="">
+                </div>
+            </div>
+        </section>
+
+        <section class="overlay" id="overlay">
+            <div class="contenedor-img">
+                <button id="btn-cerrar-popup"><i class="fa-solid fa-xmark"></i></button>
+                <img src="" alt="">
+            </div>
+            <p class="descripcion"></p>
+        </section>
+
+        <!--Footer para colocar los iconos y el pie de pagina-->
+        <footer class="contenedor">
+            <div class="redes-sociales">
+                <div class="contenedor-icono">
+                    <a href="https://twitter.com/" target="_blank" class="twitter">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                </div>
+                <div class="contenedor-icono">
+                    <a href="https://facebook.com/" target="_blank" class="facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                </div>
+                <div class="contenedor-icono">
+                    <a href="https://instagram.com/" target="_blank" class="instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="creado-por">
+                <p>Sitio diseñado por <a href="#">Grupo 1</a> - <a href="#">Desarrollo Web</a></p>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/web-animations-js@2.3.2/web-animations.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/muuri@0.9.5/dist/muuri.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
